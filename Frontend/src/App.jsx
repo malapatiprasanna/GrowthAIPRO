@@ -15,7 +15,7 @@ function App() {
     setError("");
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/business-data", { name, location });
+      const res = await axios.post("https://growthaipro.onrender.com/bussiness-data", { name, location });
       setData(res.data);
     } catch {
       alert("Error fetching data");
@@ -26,7 +26,7 @@ function App() {
   const regenerateHeadline = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/regenerate-headline", {
+      const res = await axios.get("https://growthaipro.onrender.com/regenerate-headline", {
         params: { name, location }
       });
       setData((prev) => ({ ...prev, headline: res.data.headline }));
