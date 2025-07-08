@@ -37,24 +37,44 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
-      <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6">
-        <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-gray-100">
+      <div className="w-full max-w-md space-y-4">
+        <form onSubmit={handleSubmit} className="bg-white p-6 rounded-xl shadow space-y-4">
           <h1 className="text-xl font-bold text-center">Business Dashboard</h1>
-          <input className="w-full p-2 border rounded" value={name} onChange={e => setName(e.target.value)} placeholder="Business Name" />
-          <input className="w-full p-2 border rounded" value={location} onChange={e => setLocation(e.target.value)} placeholder="Location" />
-          <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700" disabled={loading}>
+          <input
+            type="text"
+            placeholder="Business Name"
+            className="w-full px-4 py-2 border rounded"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Location"
+            className="w-full px-4 py-2 border rounded"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+            disabled={loading}
+          >
             {loading ? "Loading..." : "Submit"}
           </button>
         </form>
 
         {data && (
-          <div className="mt-6 space-y-2">
-            <p><strong>Rating:</strong> {data.rating} ⭐</p>
+          <div className="bg-white p-6 rounded-xl shadow space-y-2">
+            <p><strong>Rating:</strong> {data.rating}</p>
             <p><strong>Reviews:</strong> {data.reviews}</p>
-            <p><strong>SEO Headline:</strong> {data.headline}</p>
-            <button onClick={regenerateHeadline} className="mt-2 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">
-              {loading ? "Loading..." : "Regenerate SEO Headline"}
+            <p><strong>Headline:</strong> {data.headline}</p>
+            <button
+              onClick={regenerateHeadline}
+              className="mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+              disabled={loading}
+            >
+              {loading ? "Regenerating..." : "Regenerate SEO Headline"}
             </button>
           </div>
         )}
@@ -62,5 +82,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
