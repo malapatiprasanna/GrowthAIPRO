@@ -68,7 +68,7 @@ function App() {
           <div className="bg-white p-6 rounded-xl shadow space-y-2">
             <p><strong>Rating:</strong> {data.rating}</p>
             <p><strong>Reviews:</strong> {data.reviews}</p>
-            <p><strong>Headline:</strong> {data.headline}</p>
+            <p><strong>SEO Headline:</strong> {data.headline}</p>
             <button
               onClick={regenerateHeadline}
               className="mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
