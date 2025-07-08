@@ -40,6 +40,7 @@ function App() {
     <div className="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
       <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6">
         <form onSubmit={handleSubmit} className="space-y-4">
+          <h1 className="text-xl font-bold text-center">Business Dashboard</h1>
           <input className="w-full p-2 border rounded" value={name} onChange={e => setName(e.target.value)} placeholder="Business Name" />
           <input className="w-full p-2 border rounded" value={location} onChange={e => setLocation(e.target.value)} placeholder="Location" />
           <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700" disabled={loading}>
